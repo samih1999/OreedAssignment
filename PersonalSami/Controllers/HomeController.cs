@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PersonalSami.Models;
 using System;
@@ -20,6 +21,8 @@ namespace PersonalSami.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.usernae_secc = HttpContext.Session.GetString("usernae_secc");
+
             return View();
         }
 

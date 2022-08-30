@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+
+@{ var name = ViewBag.usernae_secc;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -70,11 +74,21 @@
                     </li>
 
                     <li class="nav-item last-item">
-                     <partial name="_LoginPartial" />
+                        @if (name == null)
+                        {
+                            
+                            <partial name="_LoginPartial" />
+                        }
+                        else
+                        {
+                            <a class="btn btn-colored btn-flat btn-theme-colored mt-15 mt-sm-10 pt-10 pb-10" asp-controller="User" asp-action="Logout">logout </a>
+                        }
 
-            </li>
-            </ul>
-        </div>
+
+
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 

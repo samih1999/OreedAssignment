@@ -27,6 +27,8 @@ namespace PersonalSami.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.usernae_secc = HttpContext.Session.GetString("usernae_secc");
+
             return View();
         }
 
