@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PersonalSami.Entity;
+using personalsami.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +13,10 @@ namespace PersonalSami.Data
             : base(options)
         {
         }
-        public DbSet<UserInfo> userInfos { get; set; }
-        public DbSet<Experiences> experiences { get; set; }
+        public DbSet<CustomerModel> customerModels { get; set; }
+        public DbSet<OrderModel> Orders { get; set; }
+        public DbSet<NormalOrderModel> normalOrders { get; set; }
+        public DbSet<SpeccialOrderModel> speccialOrders { get; set; }
+
     }
 }

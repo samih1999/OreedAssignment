@@ -10,9 +10,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using personalsami.Services;
 using PersonalSami.Data;
 using PersonalSami.Services;
-using PersonalSami.Services.Implementation;
+using PersonalSami.Services.implementayion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,7 @@ namespace PersonalSami
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
-            services.AddScoped<IRegisterService, RegisterService>();
+            services.AddScoped<IOrderService, OrderService>();
 
         }
 
